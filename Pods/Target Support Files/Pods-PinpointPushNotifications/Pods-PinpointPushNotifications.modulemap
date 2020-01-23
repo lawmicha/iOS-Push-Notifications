@@ -1,0 +1,6 @@
+framework module Pods_PinpointPushNotifications {
+  umbrella header "Pods-PinpointPushNotifications-umbrella.h"
+
+  export *
+  module * { export * }
+}

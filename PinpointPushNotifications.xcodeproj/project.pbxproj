@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -13,6 +13,7 @@
 		21B6D0FB23D91E3C007FAC71 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 21B6D0FA23D91E3C007FAC71 /* Assets.xcassets */; };
 		21B6D0FE23D91E3C007FAC71 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 21B6D0FD23D91E3C007FAC71 /* Preview Assets.xcassets */; };
 		21B6D10123D91E3C007FAC71 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 21B6D0FF23D91E3C007FAC71 /* LaunchScreen.storyboard */; };
+		DF2643E7B008A76C992C7DAB /* Pods_PinpointPushNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4595806B824E648AECD99AE7 /* Pods_PinpointPushNotifications.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,9 @@
 		21B6D0FD23D91E3C007FAC71 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		21B6D10023D91E3C007FAC71 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		21B6D10223D91E3C007FAC71 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		234A012E52CE561F819BE977 /* Pods-PinpointPushNotifications.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PinpointPushNotifications.debug.xcconfig"; path = "Target Support Files/Pods-PinpointPushNotifications/Pods-PinpointPushNotifications.debug.xcconfig"; sourceTree = "<group>"; };
+		4595806B824E648AECD99AE7 /* Pods_PinpointPushNotifications.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PinpointPushNotifications.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		785478F7CC99DE3F73B3A88D /* Pods-PinpointPushNotifications.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PinpointPushNotifications.release.xcconfig"; path = "Target Support Files/Pods-PinpointPushNotifications/Pods-PinpointPushNotifications.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +35,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DF2643E7B008A76C992C7DAB /* Pods_PinpointPushNotifications.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,6 +47,8 @@
 			children = (
 				21B6D0F323D91E3B007FAC71 /* PinpointPushNotifications */,
 				21B6D0F223D91E3B007FAC71 /* Products */,
+				3C8B712A8C4ABA74D4438C6A /* Pods */,
+				5159955B8F69FF4FF7B95DFA /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -75,6 +82,23 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		3C8B712A8C4ABA74D4438C6A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				234A012E52CE561F819BE977 /* Pods-PinpointPushNotifications.debug.xcconfig */,
+				785478F7CC99DE3F73B3A88D /* Pods-PinpointPushNotifications.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		5159955B8F69FF4FF7B95DFA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4595806B824E648AECD99AE7 /* Pods_PinpointPushNotifications.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -82,9 +106,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 21B6D10523D91E3C007FAC71 /* Build configuration list for PBXNativeTarget "PinpointPushNotifications" */;
 			buildPhases = (
+				C9C96C1690F70DFA1E7FB4C1 /* [CP] Check Pods Manifest.lock */,
 				21B6D0ED23D91E3B007FAC71 /* Sources */,
 				21B6D0EE23D91E3B007FAC71 /* Frameworks */,
 				21B6D0EF23D91E3B007FAC71 /* Resources */,
+				911BF5A61850C23516DD065A /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -140,6 +166,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		911BF5A61850C23516DD065A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PinpointPushNotifications/Pods-PinpointPushNotifications-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PinpointPushNotifications/Pods-PinpointPushNotifications-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-PinpointPushNotifications/Pods-PinpointPushNotifications-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C9C96C1690F70DFA1E7FB4C1 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-PinpointPushNotifications-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		21B6D0ED23D91E3B007FAC71 /* Sources */ = {
@@ -282,10 +350,12 @@
 		};
 		21B6D10623D91E3C007FAC71 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 234A012E52CE561F819BE977 /* Pods-PinpointPushNotifications.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"PinpointPushNotifications/Preview Content\"";
+				DEVELOPMENT_TEAM = 3XS7A2X6Q6;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = PinpointPushNotifications/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -301,10 +371,12 @@
 		};
 		21B6D10723D91E3C007FAC71 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 785478F7CC99DE3F73B3A88D /* Pods-PinpointPushNotifications.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"PinpointPushNotifications/Preview Content\"";
+				DEVELOPMENT_TEAM = 3XS7A2X6Q6;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = PinpointPushNotifications/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
