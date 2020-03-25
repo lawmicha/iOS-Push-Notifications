@@ -65,11 +65,8 @@ did register
 
 14. Go to your Membership Details page to get the Team ID.
 
-
-
 15. `amplify notifications add`
 
-### Not working - go to Pinpoint console and add it,  go to next step
 ```
 8c8590431b3d:iOS-Push-Notifications mdlaw$ amplify notifications add
 ? Choose the push notification channel to enable. APNS
