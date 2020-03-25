@@ -2,6 +2,9 @@
 
 ### Getting started with AWS Pinpoint Campaigns Push Notifications 
 
+Related doc
+https://github.com/aws-amplify/docs/pull/1275
+
 # What is it?
 
 Pre-requiste
