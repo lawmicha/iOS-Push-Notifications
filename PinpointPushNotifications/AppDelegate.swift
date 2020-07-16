@@ -10,23 +10,36 @@ import UIKit
 import UserNotifications
 import AWSPinpoint
 
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var pinpoint: AWSPinpoint?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        // Override point for custormization after application launch.
         AWSDDLog.sharedInstance.logLevel = .verbose
         AWSDDLog.add(AWSDDTTYLogger.sharedInstance)
 
-        // AWSPinpoint initialization
+        // AWSPinpoint high level client initialization
         let pinpointConfiguration = AWSPinpointConfiguration.defaultPinpointConfiguration(launchOptions: launchOptions)
-        pinpointConfiguration.debug = true
+        pinpointConfiguration.debug = true // Make sure to set debug mode to use APNS sandbox
         pinpoint = AWSPinpoint(configuration: pinpointConfiguration)
 
+        // Because we have initialized the high level client, simply access the low level client
+        let serviceSDK = pinpoint?.targetingService
+
+        // example
+        do {
+            let request = AWSPinpointTargetingPutEventsRequest()!
+            request.applicationId = "350311e0ea123123123123" // replace with configuration appId
+            serviceSDK?.putEvents(request)
+        } catch {
+            print("Failed")
+        }
+
         // Present the user with a request to authorize push notifications
-        registerForPushNotifications()
+        //registerForPushNotifications()
 
         return true
     }
@@ -45,7 +58,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
     }
 
-    // MARK: RemoteNotification Lifecycle
+    // MARK: Remote Notifications Lifecycle
     func application(_ application: UIApplication,
         didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
         let tokenParts = deviceToken.map { data in String(format: "%02.2hhx", data) }
@@ -64,10 +77,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication,
                      didReceiveRemoteNotification userInfo: [AnyHashable: Any],
                      fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
-      guard let aps = userInfo["aps"] as? [String: AnyObject] else {
-        completionHandler(.failed)
-        return
-      }
 
         if (application.applicationState == .active) {
             let alert = UIAlertController(title: "Notification Received",

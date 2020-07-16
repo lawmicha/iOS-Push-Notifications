@@ -1,20 +1,29 @@
 PODS:
-  - AWSCore (2.12.6)
-  - AWSPinpoint (2.12.6):
-    - AWSCore (= 2.12.6)
+  - AWSCore (2.14.2)
+  - AWSPinpoint (2.14.2):
+    - AWSCore (= 2.14.2)
 
 DEPENDENCIES:
-  - AWSPinpoint (~> 2.12.6)
+  - AWSPinpoint (from `https://github.com/aws-amplify/aws-sdk-ios.git`, branch `lawmicha/pinpoint-sdk`)
 
 SPEC REPOS:
-  https://cdn.cocoapods.org/:
+  trunk:
     - AWSCore
-    - AWSPinpoint
+
+EXTERNAL SOURCES:
+  AWSPinpoint:
+    :branch: lawmicha/pinpoint-sdk
+    :git: https://github.com/aws-amplify/aws-sdk-ios.git
+
+CHECKOUT OPTIONS:
+  AWSPinpoint:
+    :commit: 6f69ce483929dda20db1f90e810fa0cfce4d7267
+    :git: https://github.com/aws-amplify/aws-sdk-ios.git
 
 SPEC CHECKSUMS:
-  AWSCore: 48bb8d477d8137377e86b2ade9eb34a761f42df5
-  AWSPinpoint: 98ab5a2afdbc9f527d9cd98fcb040b39cf7fce14
+  AWSCore: 80da498ab0979e77dbdc7690a61ceaaccfb0499a
+  AWSPinpoint: ce47d17a9d67885d83276cf0ee92edfe809c007f
 
-PODFILE CHECKSUM: 9bc65b2397d7458fdf4a999ffc72a691ccdd72fa
+PODFILE CHECKSUM: d3db4f772cce62b784bd791949b96140ab4d4033
 
-COCOAPODS: 1.8.4
+COCOAPODS: 1.9.3
